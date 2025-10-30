@@ -52,3 +52,35 @@ h3{
     font-size: 20px;
     padding: 0 2rem;
 }
+.alert-danger{
+    display: none;
+}
+.alert {
+    /* Spacing and Dimensions */
+    padding: 15px 20px; /* Top/Bottom and Left/Right Padding */
+    margin: 20px 0;    /* Space above and below the alert */
+    width: 90%;        /* Make it take up most of the width */
+    max-width: 600px;  /* Stop it from getting too wide on large screens */
+    
+    /* Box Appearance */
+    border: 1px solid; /* A simple border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* page 3 style start */
+#page3{
+    display:none;
+}
+#content{
+    display: flex;
+    justify-content: space-around;
+}
+#participant ul{
+   
+    border-radius: 12px;
+    list-style-type: none;
+    width: 80%;
+    margin: 1rem auto;
+    box-shadow: 5px 5px 10px 5px #a5a2b7;
+}

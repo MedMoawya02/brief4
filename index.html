@@ -99,13 +99,13 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-4">
-            <a href="#" class="btn btn-success " style=" opacity: 0.2;">Suivant</a>
+            <a href="#" class="btn btn-success " style="opacity: 0.1;">Suivant</a>
         </div>
     </div>
     <!-- page1 end -->
 
     <!-- page2 start -->
-     <div id="page2" class="container mt-5">
+    <div id="page2" class="container mt-5">
         <h1>Ticketley</h1>
         <h3>Etape 2:Choix de l’événement</h3>
         <div id="event-content">
@@ -119,15 +119,53 @@
                 <button id="increment" class="btn btn-secondary">+</button>
                 <span id="nombre"></span>
                 <button id="decrement" class="btn btn-secondary">-</button>
-                <p id="alert"></p>
+                <div class="alert alert-danger" role="alert">
+                    <p class="alert-message">Les billets est términées.</p>
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">
             <a href="#" class="btn btn-danger  " id="btn_pre">Précedente</a>
-            <a href="#" class="btn btn-success  ">Suivant</a>
+            <a href="#" class="btn btn-success " id="btn-page2">Suivant</a>
         </div>
-     </div>
+    </div>
     <!-- page2 end -->
+
+    <!-- page3 start -->
+    <div id="page3" class="container mt-5">
+        <h1>Ticketley</h1>
+        <h3>Etape 3:Ajout des participants</h3>
+        <div id="content">
+            <div id="content-form">
+                <h1>Formulaire</h1>
+                <h4 id="h4"></h4>
+                <form id="myform">
+                    <div class="mb-3">
+                        <label class="form-label">First name</label>
+                        <input type="text" class="form-control" id="first_name" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="last_name" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tel</label>
+                        <input type="text" class="form-control" id="tel" >
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                </form>
+            </div>
+            <div id="content-info">
+                <h1>Liste des participants</h1>
+                <div id="participant"></div>
+            </div>
+        </div>
+    </div>
+    <!-- page3 end -->
 
     <script src="main.js"> </script>
 </body>
