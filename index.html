@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <title>Brief 4</title>
+</head>
+
+<body>
+    <!-- page1 start -->
+
+    <div id="page1" class="container mt-5">
+        <h1>Ticketley</h1>
+        <h3>Etape 1:Choix de l’événement</h3>
+        <div class="row text-center">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="">
+                        <h5 class="card-title">Event 1</h5>
+                        <p class="card-text">Date:1/11/2025</p>
+                        <p class="card-text">Lieu:Youssoufia</p>
+                        <p class="card-text">Prix: 300 DH</p>
+                        <P class="card-text">Restanst:<span>52</span></P>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="">
+                        <h5 class="card-title">Event 2</h5>
+                        <p class="card-text">Date:28/10/2025</p>
+                        <p class="card-text">Lieu:Casa Blanca</p>
+                        <p class="card-text">Prix: 340 DH</p>
+                        <P class="card-text">Restanst:<span>22</span></P>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="">
+                        <h5 class="card-title">Event 3</h5>
+                        <p class="card-text">Date:12/11/2025</p>
+                        <p class="card-text">Lieu:Marrakech</p>
+                        <p class="card-text">Prix: 300 DH</p>
+                        <P class="card-text">Restanst:<span>3</span></P>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title">Event 4</h5>
+                        <p class="card-text">Date:1/12/2025</p>
+                        <p class="card-text">Lieu:Tanger</p>
+                        <p class="card-text">Prix: 700 DH</p>
+                        <P class="card-text">Restanst:<span>72</span></P>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title">Event 5</h5>
+                        <p class="card-text">Date:30/10/2025</p>
+                        <p class="card-text">Lieu:Youssoufia</p>
+                        <p class="card-text">Prix: 100 DH</p>
+                        <P class="card-text">Restanst:<span>2</span></P>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/images/11058437.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title">Event 6</h5>
+                        <p class="card-text">Date:16/1/2026</p>
+                        <p class="card-text">Lieu:Youssoufia</p>
+                        <p class="card-text">Prix: 300 DH</p>
+                        <P class="card-text">Restanst:<span>90</span></P>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+            <a href="#" class="btn btn-success " style=" opacity: 0.2;">Suivant</a>
+        </div>
+    </div>
+    <!-- page1 end -->
+
+    <!-- page2 start -->
+     <div id="page2" class="container mt-5">
+        <h1>Ticketley</h1>
+        <h3>Etape 2:Choix de l’événement</h3>
+        <div id="event-content">
+            <h1></h1>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>Restants: <span></span></p>
+            <div id="counter">
+                <h4>Nombre des billets:</h4>
+                <button id="increment" class="btn btn-secondary">+</button>
+                <span id="nombre"></span>
+                <button id="decrement" class="btn btn-secondary">-</button>
+                <p id="alert"></p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+            <a href="#" class="btn btn-danger  " id="btn_pre">Précedente</a>
+            <a href="#" class="btn btn-success  ">Suivant</a>
+        </div>
+     </div>
+    <!-- page2 end -->
+
+    <script src="main.js"> </script>
+</body>
+
+</html>

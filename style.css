@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Etape 1 style start */
+.card{
+    border-radius: 12px;
+    line-height: 0.5rem;
+}
+.displayed{
+     border: 3px solid #198754; 
+    box-shadow: 0 0 15px rgba(25, 135, 84, 0.6);
+    transform: scale(1.05);
+    transition: 0.2s;
+    
+}
+/* .btn{
+    opacity: 0.2;
+    
+} */
+h1{
+    text-transform: uppercase;
+}
+h3{
+    font-size: 30px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+
+/* page2 style */
+#page2{
+    display: none;
+}
+#event-content{
+    width: 50%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 3px 10px rgb(95, 95, 169);
+    padding: 1rem;
+}
+#counter{
+    text-align: center;
+}
+#counter #nombre{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 2rem;
+}
