@@ -61,6 +61,7 @@ let btn_decr=document.getElementById('decrement');
 let alert=document.querySelector('.alert-danger');
 let btn_next=document.getElementById("btn-page2");
 let count=0;
+let nbr_max=0;
 function updateDisplay() {
     nombre.innerText = count;   
     if (count <= 0) {
@@ -94,23 +95,30 @@ if(count<=selectedCard.restants){
    
 })
 btn_next.addEventListener('click',()=>{
-    
-    page2.style.display="none"; 
+        page2.style.display="none"; 
     document.getElementById('page3').style.display="block";
+    nbr_max=count;
+    console.log(nbr_max);
+    document.querySelector('#h4 #span2').textContent=nbr_max;
+    
+
 })
+
 
 
 /////
 ///Page3
 let myform=document.getElementById('myform');
 let participant=document.getElementById('participant');
-let h4=document.getElementById('h4');
+let h4=document.querySelector('#h4 #span1');
 let nom=document.getElementById('first_name');
 let prenom=document.getElementById('last_name');
 let email=document.getElementById('email');
 let tel=document.getElementById('tel');
-let submit_btn=document.getElementById('submit');
 
+let i=1;
+
+h4.innerHTML=i;
 myform.addEventListener('submit',(e)=>{
     e.preventDefault();
     const ul=document.createElement('ul');
@@ -122,19 +130,19 @@ myform.addEventListener('submit',(e)=>{
     <button class="btn btn-supp btn-danger">Supprimer</button>
     `
     participant.appendChild(ul);
-    myform.reset();
-})
-// --- 2. التعامل مع زر الحذف (باستخدام تفويض الأحداث - FIX) ---
-// نُرفق المُستمع بالعنصر الأب الثابت (participant)
-participant.addEventListener('click', (e) => {
-    // نتحقق مما إذا كان العنصر الذي تم النقر عليه يحتوي على الفئة 'btn-supp'
-    if (e.target.classList.contains('btn-supp')) {
+    let btn_supp=ul.querySelector('ul .btn-supp');
+    btn_supp.addEventListener('click',()=>{
+        ul.remove();
+        i--;
+        h4.innerHTML=i;
         
-        // نجد أقرب عنصر أب من نوع <ul> ونقوم بإزالته
-        // هذا يضمن حذف معلومات المشارك بالكامل
-        e.target.closest('ul').remove();
-    }
-});
+    })
+    myform.reset();
+    i++;
+    h4.innerHTML=i;    
+})
+
+
 
 
 
