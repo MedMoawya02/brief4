@@ -1,5 +1,6 @@
 let cards = document.querySelectorAll('.card-body');
-let btn = document.querySelector('.btn-success');
+let btn = document.querySelector('#btn_page1');
+btn.disabled=true;
 let selectedCard = null;
 cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -13,7 +14,8 @@ cards.forEach(card => {
             prix: card_text[2].innerHTML,
             restants: card_text[3].querySelector('span').innerHTML,
         }
-            btn.style.opacity="1";
+           /*  btn.style.opacity="1"; */
+           btn.disabled=false;
         console.log(selectedCard);
 
 
@@ -33,7 +35,7 @@ cards.forEach(card => {
         paragraphs[2].innerHTML = selectedCard.prix;
         reste.innerHTML = selectedCard.restants;
        
-        console.log(reste);
+        console.log(reste.innerHTML);
         
         
     })
@@ -60,10 +62,16 @@ let btn_incr=document.getElementById('increment');
 let btn_decr=document.getElementById('decrement');
 let alert=document.querySelector('.alert-danger');
 let btn_next=document.getElementById("btn-page2");
+let reste = document.querySelector('#event-content p span');
+btn_next.disabled=true;
+
 let count=0;
 let nbr_max=0;
 function updateDisplay() {
-    nombre.innerText = count;   
+    nombre.innerText = count; 
+    if(count!=0){
+        btn_next.disabled=false;
+    }  
     if (count <= 0) {
         btn_decr.disabled = true;
     } else {
@@ -81,7 +89,9 @@ btn_incr.addEventListener('click',()=>{
         btn_incr.removeAttribute("disabled"); 
     }
     updateDisplay();
-    
+    reste.innerHTML--;
+    /* selectedCard.restants-=1;
+    console.log(selectedCard.restants); */
 })
 btn_decr.addEventListener('click',()=>{
     count--; 
@@ -92,7 +102,7 @@ if(count<=selectedCard.restants){
     }
 
     updateDisplay();
-   
+    reste.innerHTML++;   
 })
 btn_next.addEventListener('click',()=>{
         page2.style.display="none"; 
