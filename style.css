@@ -77,10 +77,29 @@ h3{
     justify-content: space-around;
 }
 #participant ul{
-   
+    padding: 20px ;
     border-radius: 12px;
     list-style-type: none;
     width: 80%;
     margin: 1rem auto;
-    box-shadow: 5px 5px 10px 5px #a5a2b7;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.7);
+    line-height: 30px;
+    position: relative;
+}
+#participant ul li{
+    font-weight: 700;
+}
+#participant ul button{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    
+
+    
+}
+.mb-3 label{
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 20px;
+    letter-spacing: 0.08em;
 }

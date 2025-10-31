@@ -108,6 +108,11 @@ btn_next.addEventListener('click',()=>{
 
 /////
 ///Page3
+/*regex*/
+const nameRegex = /^[a-zA-Z\u0600-\u06FF\s.'-]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const telRegex = /^\+?[\d\s-()]{10}$/;
+/**/ 
 let myform=document.getElementById('myform');
 let participant=document.getElementById('participant');
 let h4=document.querySelector('#h4 #span1');
@@ -115,12 +120,29 @@ let nom=document.getElementById('first_name');
 let prenom=document.getElementById('last_name');
 let email=document.getElementById('email');
 let tel=document.getElementById('tel');
-
+let submit=document.getElementById('submit')
 let i=1;
 
 h4.innerHTML=i;
 myform.addEventListener('submit',(e)=>{
     e.preventDefault();
+   
+    if (!nameRegex.test(nom.value) || !nameRegex.test(prenom.value)) {
+        document.getElementById('first_name').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
+        document.getElementById('first_name_error').innerHTML="Champ invalid";
+        return;
+    }
+    if (!emailRegex.test(email.value)) {
+        document.getElementById('email_error').innerHTML="Invalid email format. Please use the format: [name@example.com].";
+        document.getElementById('email').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
+        return;
+    }
+    if ( tel.value.trim() === '' && !telRegex.test(tel.value)) { 
+        document.getElementById('tel_error').innerHTML="Champ invalid";
+        document.getElementById('tel').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
+        return;
+    }
+    
     const ul=document.createElement('ul');
     ul.innerHTML=`
     <li>${nom.value}</li>
@@ -135,11 +157,20 @@ myform.addEventListener('submit',(e)=>{
         ul.remove();
         i--;
         h4.innerHTML=i;
+        if(i<=nbr_max){
+            submit.disabled=false;
+        }
         
     })
     myform.reset();
     i++;
-    h4.innerHTML=i;    
+    h4.innerHTML=i;   
+    if(i-1==nbr_max){
+        submit.setAttribute('disabled','true');
+        h4.innerHTML=i-1;
+    }
+      
+     
 })
 
 
