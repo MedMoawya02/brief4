@@ -24,7 +24,7 @@ cards.forEach(card => {
         //Page 2
         let page1 = document.getElementById('page1');
         let page2 = document.getElementById('page2');
-        let eventName = document.querySelector('#event-content h1');
+        let eventName = document.querySelector('#event-content h2');
         let paragraphs = document.querySelectorAll('#event-content p');
         let reste = document.querySelector('#event-content p span');
         let btn_pre = document.getElementById("btn_pre");
@@ -44,8 +44,8 @@ cards.forEach(card => {
 btn.addEventListener('click', () => {
     page1.style.display = "none";
     page2.style.display = "block";
-    restant_billets=selectedCard.restants;
-    
+   /*  restant_billets=selectedCard.restants; 
+    console.log(restant_billets); */
     
 })
 
@@ -68,6 +68,7 @@ btn_next.disabled=true;
 let count=0;
 let nbr_max=0;
 function updateDisplay() {
+    
     nombre.innerText = count; 
     if(count!=0){
         btn_next.disabled=false;
@@ -110,6 +111,7 @@ btn_next.addEventListener('click',()=>{
     nbr_max=count;
     console.log(nbr_max);
     document.querySelector('#h4 #span2').textContent=nbr_max;
+    console.log(parseInt(selectedCard.restants-=nbr_max));
     
 
 })

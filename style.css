@@ -9,9 +9,9 @@
     line-height: 0.5rem;
 }
 .displayed{
-     border: 3px solid #198754; 
+     border: 3px solid #0000FF; 
     box-shadow: 0 0 15px rgba(25, 135, 84, 0.6);
-    transform: scale(1.05);
+    transform: scale(1.08);
     transition: 0.2s;
     
 }
@@ -21,6 +21,9 @@
 } */
 h1{
     text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #0000FF;
+    font-size: 42px;
 }
 h3{
     font-size: 30px;
@@ -75,14 +78,29 @@ h3{
 #content{
     display: flex;
     justify-content: space-around;
+    box-shadow:2px 3px 10px #87CEEB ;
+    border-radius: 12px;
+    padding: 20px 0;
+    overflow: hidden;
+     position: relative;
+     
+}
+#content-form::before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color: #0000FF;
+    position: absolute;
+    left: calc(50% - 2px);
+    
 }
 #participant ul{
     padding: 20px ;
     border-radius: 12px;
     list-style-type: none;
-    width: 80%;
+    width: 100%;
     margin: 1rem auto;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.7);
+    box-shadow: 2px 3px 10px #87CEEB ;
     line-height: 30px;
     position: relative;
 }
@@ -102,4 +120,22 @@ h3{
     text-transform: uppercase;
     margin-top: 20px;
     letter-spacing: 0.08em;
+}
+
+@media(max-width:686px){
+    #btn_page1{
+        width: 100%;
+    }
+    h1{
+        
+        text-transform: uppercase;
+        text-align: center;
+    }
+    h3{
+        font-size: 20px;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        margin: 1rem 0;
+        text-align: center;
+    }
 }
