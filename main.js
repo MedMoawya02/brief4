@@ -72,11 +72,14 @@ function updateDisplay() {
     nombre.innerText = count; 
     if(count!=0){
         btn_next.disabled=false;
-    }  
-    if (count <= 0) {
+    } else{
+        btn_next.disabled=true;
+    }
+    if (count == 0) {
         btn_decr.disabled = true;
     } else {
         btn_decr.disabled = false;
+        
     }  
 }
 updateDisplay();
@@ -123,7 +126,7 @@ btn_next.addEventListener('click',()=>{
 /*regex*/
 const nameRegex = /^[a-zA-Z\u0600-\u06FF\s.'-]+$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const telRegex = /^\+?[\d\s-()]{10}$/;
+const telRegex = /^\+?[\d\s-().]{7,20}$/
 /**/ 
 let myform=document.getElementById('myform');
 let participant=document.getElementById('participant');
@@ -150,13 +153,14 @@ myform.addEventListener('submit',(e)=>{
         return;
     }
     if ( tel.value.trim() === '' && !telRegex.test(tel.value)) { 
-        document.getElementById('tel_error').innerHTML="Champ invalid";
+        document.getElementById('tel_error').innerHTML="Phone number is required.Use 10 numbers";
         document.getElementById('tel').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
         return;
     }
     
     const ul=document.createElement('ul');
     ul.innerHTML=`
+    <h3>Participant${i}</h3>
     <li>${nom.value}</li>
     <li>${prenom.value}</li>
     <li>${email.value}</li>
@@ -172,6 +176,7 @@ myform.addEventListener('submit',(e)=>{
         if(i<=nbr_max){
             submit.disabled=false;
         }
+
         
     })
     myform.reset();
