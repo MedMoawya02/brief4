@@ -135,14 +135,15 @@ let nom=document.getElementById('first_name');
 let prenom=document.getElementById('last_name');
 let email=document.getElementById('email');
 let tel=document.getElementById('tel');
-let submit=document.getElementById('submit')
+let submit=document.getElementById('submit');
+let btn_next_page3=document.getElementById('btn_page3');
+let participants=[];
 let i=1;
-
 h4.innerHTML=i;
 myform.addEventListener('submit',(e)=>{
     e.preventDefault();
    
-    if (!nameRegex.test(nom.value) || !nameRegex.test(prenom.value)) {
+   /*  if (!nameRegex.test(nom.value) || !nameRegex.test(prenom.value)) {
         document.getElementById('first_name').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
         document.getElementById('first_name_error').innerHTML="Champ invalid";
         return;
@@ -156,18 +157,27 @@ myform.addEventListener('submit',(e)=>{
         document.getElementById('tel_error').innerHTML="Phone number is required.Use 10 numbers";
         document.getElementById('tel').style.boxShadow="0 0 5px rgba(231, 76, 60, 0.8)";
         return;
+    } */
+    const nouveauParticipant={
+        nom:nom.value.trim(),
+        prenom:prenom.value.trim(),
+        email:email.value.trim(),
+        tel:tel.value.trim(),
     }
+    participants.push(nouveauParticipant);
+    console.log(participants);
     
     const ul=document.createElement('ul');
     ul.innerHTML=`
     <h3>Participant${i}</h3>
-    <li>${nom.value}</li>
-    <li>${prenom.value}</li>
+    <li>${nom.value} ${prenom.value}</li>
     <li>${email.value}</li>
     <li>${tel.value}</li>
     <button class="btn btn-supp btn-danger">Supprimer</button>
     `
-    participant.appendChild(ul);
+    participant.appendChild(ul); 
+    
+    
     let btn_supp=ul.querySelector('ul .btn-supp');
     btn_supp.addEventListener('click',()=>{
         ul.remove();
@@ -185,12 +195,47 @@ myform.addEventListener('submit',(e)=>{
     if(i-1==nbr_max){
         submit.setAttribute('disabled','true');
         h4.innerHTML=i-1;
-    }
-      
-     
+    }   
 })
 
 
+let page4=document.getElementById('page4');
+let page4_content=document.getElementById('page4_content');
+
+btn_next_page3.addEventListener('click',function(){ 
+ 
+    page4.style.display="block";
+    document.getElementById('page3').style.display="none";
+    console.log(selectedCard);
+    page4_content.innerHTML=`
+        <h2>Récapitulatif</h2>
+        <p>Evenement : ${selectedCard.title}</p>
+        <p>Nombre des billets : ${count}</p>
+        <p>Participants :</p>
+    `;    
+    participants.forEach(par=>{
+        console.log(par);
+        
+        page4_content.innerHTML+=`
+        <ul class='list-participants'>
+            <strong>Nom complet:</strong> ${par.nom} ${par.prenom} <br>
+            <strong>Email:</strong> ${par.email} <br>
+            <strong>Tél:</strong> ${par.tel}
+        </ul>
+        `
+    }) 
+})
+document.getElementById('btn_pre-page3').addEventListener('click',function(){
+    document.getElementById('page3').style.display="none";
+     document.getElementById('page2').style.display="block"; 
+})
+
+///Page4
+/* let page4=document.getElementById('page4_content');
+let participants=document.querySelectorAll('#participant ul li')
+page4.innerHTML=`<p>${participants}</p>`
+console.log(participants);
+ */
 
 
 

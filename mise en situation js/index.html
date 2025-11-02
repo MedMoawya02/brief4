@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🍽️ POS System - Student Version</h1>
+    </header>
+    <main>
+      <!-- LEFT COLUMN: MENU -->
+      <section class="menu-section">
+        <h2>Available Foods</h2>
+        <div class="foods-grid" id="foodsContainer">
+          <!-- TODO (JS): render foods here -->
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: CART -->
+      <section class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div class="cart-items" id="cartContainer">
+          <div class="empty-cart">Your cart is empty</div>
+        </div>
+
+        <!-- TOTALS SECTION -->
+        <div class="totals-section">
+          <!-- VAT Input (Bonus Feature) -->
+          <div class="vat-input-group">
+            <label for="vatInput">VAT Rate (%):</label>
+            <input
+              type="number"
+              id="vatInput"
+              value="20"
+              min="0"
+              max="100"
+              step="0.1"
+            />
+          </div>
+
+          <!-- Totals Display -->
+          <div class="total-row subtotal">
+            <span>Subtotal (HT):</span>
+            <span id="subtotal">0.00 DH</span>
+          </div>
+          <div class="total-row vat">
+            <span>VAT (TVA):</span>
+            <span id="vat">0.00 DH</span>
+          </div>
+          <div class="total-row final">
+            <span>Total (TTC):</span>
+            <span id="total">0.00 DH</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

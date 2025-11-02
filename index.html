@@ -125,8 +125,8 @@
             </div>
         </div>
         <div class="d-flex justify-content-between mt-5">
-            <button  class="btn btn-danger  " id="btn_pre">Précedente</button>
-            <button class="btn btn-success " id="btn-page2">Suivant</button>
+            <button class="btn btn-danger  " id="btn_pre">Précedente</button>
+            <button class="btn btn-primary " id="btn-page2">Suivant</button>
         </div>
     </div>
     <!-- page2 end -->
@@ -142,22 +142,22 @@
                 <form id="myform">
                     <div class="mb-3">
                         <label class="form-label">First name</label>
-                        <input type="text" class="form-control" id="first_name" >
+                        <input type="text" class="form-control" id="first_name">
                         <p id="first_name_error"></p>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="last_name" >
+                        <input type="text" class="form-control" id="last_name">
                         <p id="last_name_error"></p>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" >
+                        <input type="email" class="form-control" id="email">
                         <p id="email_error"></p>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tel</label>
-                        <input type="text" class="form-control" id="tel" >
+                        <input type="text" class="form-control" id="tel">
                         <p id="tel_error"></p>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
@@ -174,6 +174,52 @@
         </div>
     </div>
     <!-- page3 end -->
+
+
+    <!-- page4 start -->
+    <div id="page4" class="container mt-5">
+        <h1>🆃🅸🅲🅺🅸🆃🅻🅴🆈</h1>
+        <h3>Etape 4:Confirmation</h3>
+        <div id="page4_container">
+
+            <div id="page4_content">
+    
+            </div>
+            <!--  -->
+            <div id="payment_section">
+                <h3>Méthode de Paiement</h3>
+                <div class="payment-options">
+                    <label for="pay_card" class="payment-option">
+                        <input type="radio" id="pay_card" name="payment_method" value="card" checked>
+                        <span class="custom-radio"></span>
+                        <div class="option-details">
+                            💳 Payer par Carte Bancaire
+                            <span class="card-icons">
+    
+                            </span>
+                        </div>
+                    </label>
+    
+                    <label for="pay_paypal" class="payment-option">
+                        <input type="radio" id="pay_paypal" name="payment_method" value="paypal">
+                        <span class="custom-radio"></span>
+                        <div class="option-details">
+                            🅿️ Payer avec PayPal
+                        </div>
+                    </label>
+    
+                </div>
+    
+                <div id="card_details" class="payment-form">
+                    <p>Formulaire de carte bancaire à implémenter...</p>
+                </div>
+    
+                <button id="btn_confirmer_paiement" class="btn btn-success" >Confirmer la Réservation</button>
+            </div>
+            <!--  -->
+        </div>
+    </div>
+    <!-- page4 end -->
 
     <script src="main.js"> </script>
 </body>
